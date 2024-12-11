@@ -1,8 +1,9 @@
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const socials = [
   { icon: <FaLinkedin />, path: "https://www.linkedin.com/in/yogeshvijayan/" },
   { icon: <FaGithub />, path: "https://github.com/yogesh92" },
+  { icon: <FaEnvelope />, path: "mailto:prabhuyogesh92@gmail.com" },
 ];
 
 const Social = ({ containerStyles, iconStyles }) => {
