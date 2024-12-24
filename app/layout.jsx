@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -21,7 +22,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head />
       <body className={jetbrainsMono.variable}>
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
         <PageTransition>
           <Header />
           {children}

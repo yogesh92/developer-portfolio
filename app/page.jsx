@@ -26,7 +26,7 @@ const Home = () => {
               I'm a <span className="text-accent">Software Engineer.</span>
             </h3>
             <p className="max-w-[500px] mb-9 text-white/80">
-              With a dedicated command of software development, my portfolio illustrates my commitment to excellence.
+            There is only one Master Branch, and it does not share power.
             </p>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">

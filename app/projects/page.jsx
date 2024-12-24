@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from 'swiper/modules';
 import "swiper/swiper-bundle.css";
 
 import Link from "next/link";
@@ -96,10 +97,27 @@ const Projects = () => {
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
-              {/* outline num */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
+              {/* Top section with number and github button */}
+              <div className="flex justify-between items-center">
+                {/* outline num */}
+                <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+                  {project.num}
+                </div>
+                {/* github button */}
+                <Link href={project.github}>
+                  <TooltipProvider delayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Github Repository</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </Link>
               </div>
+
               {/* project category */}
               <h2 className="text-[42px] font-bold leading-none transition-all duration-500 capitalize">
                 {project.category} 
@@ -115,7 +133,6 @@ const Projects = () => {
                       className="text-base text-accent"
                     >
                       {item.name}
-                      {/* remove the last comma */}
                       {index !== project.stack.length - 1 && ","}
                     </li>
                   );
@@ -123,22 +140,6 @@ const Projects = () => {
               </ul>
               {/* border */}
               <div className="border border-white/20"></div>
-              {/* buttons */}
-              <div className="flex items-center gap-4">
-                {/* github button */}
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github Repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-              </div>
             </div>
           </div>
           <div className="w-full xl:w-[50%]">
@@ -147,6 +148,12 @@ const Projects = () => {
               slidesPerView={1}
               className="xl:h-[520px] mb-12"
               onSlideChange={handleSlideChange}
+              modules={[Autoplay]}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+              }}
             >
               {projects.map((project, index) => {
                 return (
