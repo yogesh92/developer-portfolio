@@ -9,6 +9,7 @@ import {
   FaPython,
   FaJava,
   FaTypo3,
+  FaPhp,
 } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, SiC, SiCplusplus, SiCsharp, SiSpring, SiSpringboot, SiAngular, SiJquery, SiOracle, SiMysql, SiPostgresql, SiMongodb, SiSqlite, SiFirebase, SiSolidity, SiDocker, SiKubernetes, SiRedhat, SiSelenium, SiTestinglibrary, SiJunit5, SiCucumber, SiJenkins } from "react-icons/si";
 import React, { useState } from "react";
@@ -76,6 +77,10 @@ const aboutTabs = [
           {
             icon: <FaPython />,
             name: "Python",
+          },
+          {
+            icon: <FaPhp />,
+            name: "PHP",
           },
           {
             icon: <FaJs />,
