@@ -67,10 +67,6 @@ const aboutTabs = [
         category: "Languages",
         skills: [
           {
-            icon: <FaNodeJs />,
-            name: "node.js",
-          },
-          {
             icon: <FaJava />,
             name: "Java",
           },
@@ -106,6 +102,18 @@ const aboutTabs = [
             icon: <SiSolidity />,
             name: "Solidity",
           },
+          {
+            icon: <FaHtml5 />,
+            name: "HTML 5",
+          },
+          {
+            icon: <FaCss3 />,
+            name: "CSS 3",
+          },
+          {
+            icon: <FaNodeJs />,
+            name: "node.js",
+          },
         ],
       },
       {
@@ -134,22 +142,6 @@ const aboutTabs = [
           {
             icon: <SiJquery />,
             name: "jQuery",
-          },
-          {
-            icon: <FaHtml5 />,
-            name: "HTML 5",
-          },
-          {
-            icon: <FaCss3 />,
-            name: "CSS 3",
-          },
-          {
-            icon: <FaJs />,
-            name: "JavaScript",
-          },
-          {
-            icon: <FaReact />,
-            name: "React",
           },
           {
             icon: <SiNextdotjs />,
